@@ -1,11 +1,23 @@
-import {View, Text} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
+import {SearchBar, Table} from '../../components';
+import {Container} from './HomeScreen.styles';
+import {loadLeaderboardAction} from '../../store/actions/leaderboardActions';
+
+import leaderboardData from '../../data/leaderboard.json';
+import {useAppDispatch} from '../../store/utils';
 
 const HomeScreen = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(loadLeaderboardAction(leaderboardData));
+  }, [dispatch]);
+
   return (
-    <View>
-      <Text>index</Text>
-    </View>
+    <Container>
+      <SearchBar />
+      <Table />
+    </Container>
   );
 };
 

@@ -6,18 +6,15 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import HomeScreen from './src/screens/HomeScreen';
-import MainWrapper from './src/layouts/MainWrapper';
+import {AppStack} from './src/navigation';
+import {MainWrapper} from './src/layouts';
 
 function App(): React.JSX.Element {
   return (
     <MainWrapper>
-      <HomeScreen />
+      <AppStack />
     </MainWrapper>
   );
 }
-
-const styles = StyleSheet.create({});
 
 export default App;
